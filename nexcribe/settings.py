@@ -33,6 +33,8 @@ INSTALLED_APPS = [
     "reviews",
     "blog",
     "submissions",
+    "ckeditor",
+    "ckeditor_uploader",
 ]
 
 MIDDLEWARE = [
@@ -94,6 +96,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CKEDITOR_UPLOAD_PATH = "uploads/ckeditor/"
+CKEDITOR_CONFIGS = {
+    "default": {
+        "toolbar": "full",
+        "height": 300,
+        "width": "100%",
+    },
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
@@ -108,6 +118,9 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 

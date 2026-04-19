@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.utils.text import slugify
+from ckeditor.fields import RichTextField
 import math
 
 
@@ -32,7 +33,7 @@ class BlogPost(models.Model):
     )
     title = models.CharField(max_length=300)
     slug = models.SlugField(max_length=320, unique=True, blank=True)
-    body = models.TextField()
+    body = RichTextField()
     cover_image = models.ImageField(
         upload_to="blog_covers/", blank=True, null=True
     )
