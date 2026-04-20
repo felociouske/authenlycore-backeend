@@ -136,6 +136,12 @@ CLOUDINARY_STORAGE = {
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv("CSRF_TRUSTED_ORIGINS", "").split(",")
+    if origin
+]
+
 # ── CORS ──────────────────────────────────────────────────────────────────────
 
 CORS_ALLOWED_ORIGINS = os.getenv(
